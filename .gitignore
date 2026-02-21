@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Large generated images (track finals only if needed)
+episodes/*/generated/
+
+# Temporary files
+*.tmp

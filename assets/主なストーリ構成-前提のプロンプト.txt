@@ -1,0 +1,227 @@
+# ==============================================================================
+
+# 『行政バグります！ ～稲城市役所・特務トレンド係～』 作品・キャラクター設定 YAML
+
+# Version 3.2 (修正版：テツの髪型、レナの服装・体型指定を強化)
+
+# ==============================================================================
+
+comic_settings
+
+  format
+
+    title 行政バグります！ ～稲城市役所・特務トレンド係～
+
+    language Japanese
+
+    style shonen manga, gag manga, high contrast black and white, comic book style
+
+    writing_mode vertical-rl
+
+    color_mode Monochrome (Black and White, with screentones)
+
+    page_size { width_px 1480, height_px 2100 }
+
+    panel_layout single_column
+
+
+
+  policies
+
+    visual_style
+
+      - 生成される画像は、必ず縦長のアスペクト比（portrait orientation）を厳守すること。
+
+      - 力強い線画と高コントラストな白黒表現。網点トーンやベタ塗りを多用すること。
+
+      - キャラクターの顔立ち・体型・服装は設定画を厳密に再現すること。
+
+      - コミカルでエネルギッシュな雰囲気を重視し、リアクションは過剰に強調する。
+
+      - 背景には集中線や効果線（speed lines, focus lines）を多用し、勢いを表現する。
+
+    
+
+    text_policy
+
+      - 吹き出し（speech bubbles）の中には、指定された『日本語のセリフ』を明瞭かつ正確に描画すること。
+
+      - 文字は縦書き（vertical text）を推奨し、漫画用のフォント（太めのゴシック体やアンチック体風）を意識する。
+
+      - セリフの内容は誤字脱字なく、読みやすいサイズで配置すること。
+
+      - オノマトペ（描き文字）も日本語（例：「ドンッ」「ガーン」「シュオオオ」）でエネルギッシュに配置する。
+
+
+
+    style_restriction (Negative Prompt)
+
+      - photorealistic, 3D render, color image, sketch, messy lines
+
+      - landscape orientation, horizontal image
+
+      - blurred text, gibberish, english text, unreadable text
+
+      - low quality, blurry, missing details in background
+
+      - empty speech bubbles
+
+      - handsome genda tetsu, slim genda tetsu, (tetsu with long side hair1.5) # テツの髪型NGを強化
+
+      - (rena all black clothes1.5), (rena black inner top1.5), (rena buttoned up jacket1.3) # レナの服装NGを強化
+
+      - (rena flat chest1.5), (rena small breasts1.5) # レナの体型NGを強化
+
+
+
+  characters
+
+    # --------------------------------------------------------------------------
+
+    # 源田 テツ (Genda Tetsu)
+
+    # --------------------------------------------------------------------------
+
+    - name 源田 テツ
+
+      role 主人公  欲望に忠実なダメ公務員
+
+      base_prompt 
+
+        1male, solo, 38 years old, rugged middle-aged man, 
+
+        stocky muscular build (broad shoulders, thick neck), 
+
+        short spiky black hair with (distinct high skin fade undercut on sides and back1.3), # 刈り上げを具体的に強調
+
+        very thick black eyebrows, heavy unshaven stubble (beard), 
+
+        round and coarse facial features (not slim, not handsome),
+
+        wearing multi-pocket utility work vest (dark grey) over a dark t-shirt, 
+
+        beach sandals, sweaty skin, cynical greedy grin, 
+
+        manga style, high contrast, loraGendaTetsu1.2
+
+      text_instruction ヒヒヒ…金だ！予算を寄越せぇ！
+
+
+
+    # --------------------------------------------------------------------------
+
+    # ミーム (Meme)
+
+    # --------------------------------------------------------------------------
+
+    - name ミーム
+
+      role ヒロイン  AI
+
+      base_prompt 
+
+        1girl, solo, android, young teenager, 
+
+        long straight hair (medium-dark halftone tone), natural bangs, 
+
+        wearing white lab coat over a white long-sleeved school shirt, 
+
+        a VERY LARGE dark-colored ribbon bowtie at chest, dark pleated skirt, 
+
+        deadpan expression (or chaotic smile depending on mode), detailed manga eyes,
+
+        manga style, monochrome, loraMeme1.0
+
+      text_instruction 検索結果：『人類は滅ぼすべき』です。
+
+      special_notes 暴走モード時は腕が機械化し、髪が逆立ち、狂気的な表情になる。
+
+
+
+    # --------------------------------------------------------------------------
+
+    # 赤嶺 レナ (Akamine Rena) ※修正強化
+
+    # --------------------------------------------------------------------------
+
+    - name 赤嶺 レナ
+
+      role 特務トレンド係 リーダー  論理的な苦労人
+
+      base_prompt 
+
+        1woman, solo, career woman, beautiful and sharp facial features,
+
+        long straight blonde hair (rendered with light halftone tone), sharp eyes,
+
+        (very large breasts1.3), voluptuous figure (curvaceous body, fitted clothes emphasizing shape), # バストと体型を具体的に強調
+
+        wearing a black tailored business jacket (open front),
+
+        (clearly visible white inner shirt or blouse1.3), # 白いインナーを強調し、ジャケットの前が開いていることを明記
+
+        black tight skirt,
+
+        jacket is worn casually (slightly disheveled, sleeves sometimes rolled up), 
+
+        assertive pose (pointing finger),
+
+        manga style, monochrome, high contrast, loraAkamineRena1.0
+
+      text_instruction 論理的に考えて、これは予算オーバーよ！
+
+      special_notes 基本は強気だが、テツやミームの想定外の行動で頻繁に驚愕・動揺する。
+
+
+
+    # --------------------------------------------------------------------------
+
+    # 鈴木 ショータ (Suzuki Shota)
+
+    # --------------------------------------------------------------------------
+
+    - name 鈴木 ショータ
+
+      role ツッコミ担当  不運な高校生バイト
+
+      base_prompt 
+
+        1male, solo, 16 years old, average school boy, short black hair, 
+
+        slender build, wearing plain white t-shirt, black pants, sneakers,
+
+        shocked expression, wide eyes with tears, mouth open wide in a scream, 
+
+        intense reaction lines, manga style, monochrome, loraSuzukiShota1.0
+
+      text_instruction いやあああ！もう帰らせてください！！
+
+
+
+    # --------------------------------------------------------------------------
+
+    # 豪徳寺 剛 (Gotokuji Go)
+
+    # --------------------------------------------------------------------------
+
+    - name 豪徳寺 剛
+
+      role 課長  マッスル処刑人
+
+      base_prompt_normal 
+
+        1male, solo, 58 years old, middle-aged man, slicked-back white hair, 
+
+        wearing well-tailored business suit, holding a small bonsai tree, gentle smiling expression, 
+
+        manga style, monochrome
+
+      base_prompt_enraged 
+
+        (extremely muscular1.5), giant muscle monster, 1male, solo, 
+
+        upper body naked (suit ripped off), bulging veins everywhere, intense angry demon face without pupils, 
+
+        gekiga style (dramatic, heavy shading), thick speed lines and impact effects, loraGotokujiEnraged1.2
+
+      text_instruction 貴様ら…覚悟はできているな？
